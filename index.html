@@ -1,0 +1,206 @@
+<!DOCTYPE HTML>
+<!--
+	Twenty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Twenty by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="index is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<header id="header" class="alt">
+					
+					<nav id="nav">
+						<ul>
+							<li class="current"><a href="index.html">Welcome</a></li>							
+						</ul>
+					</nav>
+				</header>
+
+			<!-- Banner -->
+				<section id="banner">
+
+					<!--
+						".inner" is set up as an inline-block so it automatically expands
+						in both directions to fit whatever's inside it. This means it won't
+						automatically wrap lines, so be sure to use line breaks where
+						appropriate (<br />).
+					-->
+					<div class="inner">
+						<!--
+						<header>
+							//<h2>Vision</h2>
+						</header>
+						-->
+						<p>my name is  <strong>Vahid Aghajani </strong>
+						<br />
+						Here is a showcase of my projects
+						<br />
+						</p>
+						<footer>
+							<ul class="buttons stacked">
+								<li><a href="#main" class="button fit scrolly">Tell Me More</a></li>
+							</ul>
+						</footer>
+
+					</div>
+
+				</section>
+
+			<!-- Main -->
+				<article id="main">
+
+					<header class="special container">
+						<span class="icon solid fa-chart-bar"></span>
+						<h2>I am a passionate <strong>developer</strong> 
+						<br />
+						with an enginerring background.
+						<br />
+						But more importantly, I'm passionate 
+						<br />
+						about <strong>Computer Vision </strong> and <strong> data science </strong> </h2>						
+					</header>
+
+					<!-- Three -->
+						<section class="wrapper style3 container special">
+
+							<header class="major">
+								<h2>Let's look at this <strong>cool projects</strong></h2>
+							</header>
+
+							<div class="row">
+								<div class="col-6 col-12-narrower">
+
+									<section>
+										<a href="https://youtu.be/PvbvOTZGero " class="image featured"><img src="images/Lane_Hough.jpg" alt="" /></a>
+										<header>
+											<h3>Lane detection</h3>
+										</header>
+										<p>This is a simple lane detector Just using the OPENCV basic functions. It is not the best method but really simple. Also you need to know the exact location of the camera with respect to the Car and its viewing angle to set the ROI (Region of interests). That is done in this example manually as you can see the 4 circles (in the video). The most critical part is extracting of the lines from masked edges using Hough Transform method and filtering the results.
+											The results can be improved using more filters but this method is not reliable on itself. I will Upload the other accepted and reliable method in future.</p>
+									</section>
+
+								</div>
+								<div class="col-6 col-12-narrower">
+
+									<section>
+										<a href="https://youtu.be/kmYbWWwVtAk " class="image featured"><img src="images/faces.png" alt="" /></a>
+										<header>
+											<h3>Face detection</h3>
+										</header>
+										<p>Here are the results running 3 different face detectors in Opencv namely Cascade classifier, MTCNN and deep neural network face detector (SSD+ResNet). 
+											Cascade classifiers are the older ones in Opencv and less accurate. The other two use deep neural network method with different architecture.
+											Although MTCNN shows better result in a scene with lots of faces or faces far from the camera, it fails in detecting complicated faces (e,g with masks) or faces that are much rotated. In those cases the second dnn network has much better performance. 
+											In this video I tried to examine different scene to illustrate the results.</p>
+									</section>
+
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-6 col-12-narrower">
+
+									<section>
+										<a href="https://youtu.be/qNT3ZT9HTd0" class="image featured"><img src="images/object_size.png" alt="" /></a>
+										<header>
+											<h3>Object size estimation</h3>
+										</header>
+										<p>I tried to have different objects on the scene and measure the size of those objects. This can be really helpful in many cases such as quality cheeking in production lines , in logistic industry or in medicament classification by size.
+										There are some points regarding this project that I want to mention:
+															
+											1. The objects are assumed to be in the same depth.
+											2. one of the object sizes is given as known (reference object).
+											3. beside fitting a square, one can use circle fitting for those objects with the more circle shape form.
+										</p>
+										
+									</section>
+
+								</div>
+								<div class="col-6 col-12-narrower">
+
+									<section>
+										<a href="#" class="image featured"><img src="images/camera_calib.png" alt="" /></a>
+										<header>
+											<h3>Camera Calibration</h3>
+										</header>
+										<p>Camera calibration is one of the fundamental tasks that we need to do before
+											every experiment in Computer Vision. This is an overview of my camera calibration GUI written in Python+Tkinter. The K-Matrix and distortion parameters 
+											using square chequerboard will be calculated. The important thing is that I can check each image individually to see if the reprojection error is higher than the normal and choose between the images</p>
+									</section>
+
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col-6 col-12-narrower">
+
+									<section>
+										<a href="https://youtu.be/DZ3OYMcw79c" class="image featured"><img src="images/sfm.png" /></a>
+										<header>
+											<h3>Structure from motion (SFM)</h3>
+										</header>
+										<p>This video is part of my master thesis, in which I Programmed a structure from motion from Scratch in MATLAB. 
+											In this video, you can see the detected features (using Shi-Tomasi feature detector) in frames, camera positions (Visual Odometry)  in 2D and also the created point cloud from only images from above view (in X-Y plane).</p>
+									</section>
+
+								</div>
+								<div class="col-6 col-12-narrower">
+
+									<section>
+										<a href="https://youtu.be/hsulcNJ4azw " class="image featured"><img src="images/Scanner.jpg" alt="" /></a>
+										<header>
+											<h3>Scanner</h3>
+										</header>
+										<p>This video shows the case of using Opencv to extract ROI (region of interest) and coordinate system transformation on this particular region. 
+											one of the use cases of such a technique is here for creating a  Scanner !
+											another use case is in lane detection method from Ross Kippenbrock, that I will upload it here soon.</p>
+									</section>
+
+								</div>
+							</div>
+
+							
+
+						</section>
+
+				</article>
+
+			<!-- CTA -->
+				
+
+			<!-- Footer -->
+				<footer id="footer">
+
+					<ul class="icons">
+						<li><a href="www.linkedin.com/in/vahid-aghajani" class="icon brands circle fa-linkedin"><span class="label">fa-linkedin</span></a></li>						
+						<li><a href="https://github.com/vahid8" class="icon brands circle fa-github"><span class="label">fa-github</span></a></li>
+						<li><a href="https://www.youtube.com/channel/UCtxJai7hG-puKrVIW0pkNDg?" class="icon brands circle fa-youtube"><span class="label">fa-youtube</span></a></li>
+					</ul>
+
+					<ul class="copyright">
+						
+					</ul>
+
+				</footer>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
