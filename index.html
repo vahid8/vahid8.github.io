@@ -70,7 +70,7 @@
 						<section class="wrapper style3 container special">
 
 							<header class="major">
-								<h2>Let's look at this <strong>cool projects</strong></h2>
+								<h2>Let's look at These <strong>cool projects</strong></h2>
 							</header>
 
 							<div class="row">
@@ -81,8 +81,16 @@
 										<header>
 											<h3>Lane detection</h3>
 										</header>
-										<p>This is a simple lane detector Just using the OPENCV basic functions. It is not the best method but really simple. Also you need to know the exact location of the camera with respect to the Car and its viewing angle to set the ROI (Region of interests). That is done in this example manually as you can see the 4 circles (in the video). The most critical part is extracting of the lines from masked edges using Hough Transform method and filtering the results.
-											The results can be improved using more filters but this method is not reliable on itself. I will Upload the other accepted and reliable method in future.</p>
+										<p>This is a simple lane detector using just the OPENCV basic functions.
+											It is not the best method but really simple. Also you need to know the
+											exact location of the camera with respect to the car and its viewing angle
+											to set the ROI (Region of interests). That is done in this example manually 
+											as you can see the 4 circles (in the video). The most critical part is 
+											extracting the lines from masked edges using Hough Transform method and
+											filtering the results.
+											The results can be improved using more filters but this method
+											is not reliable by itself. I will upload the other accepted and reliable 
+											method in future.</p>
 									</section>
 
 								</div>
@@ -95,10 +103,15 @@
 										<header>
 											<h3>Face detection</h3>
 										</header>
-										<p>Here are the results running 3 different face detectors in Opencv namely Cascade classifier, MTCNN and deep neural network face detector (SSD+ResNet). 
-											Cascade classifiers are the older ones in Opencv and less accurate. The other two use deep neural network method with different architecture.
-											Although MTCNN shows better result in a scene with lots of faces or faces far from the camera, it fails in detecting complicated faces (e,g with masks) or faces that are much rotated. In those cases the second dnn network has much better performance. 
-											In this video I tried to examine different scene to illustrate the results.</p>
+										<p>Here are the results running 3 different face detectors in Opencv namely Cascade
+											classifier, MTCNN and deep neural network (dnn) face detector (SSD+ResNet). 
+											Cascade classifiers are the older ones in Opencv and less accurate. 
+											The other two, use deep neural network methods with different architecture.
+											Although MTCNN shows better results in a scene with lots of faces or faces 
+											far from the camera, it fails in detecting complicated faces (<e class="g"> with masks</e> )
+											or faces that are much rotated. In those cases the second dnn network has much 
+											better performance. 
+											In this video I tried to examine different scenes to illustrate the results.</p>
 									</section>
 
 								</div>
@@ -111,12 +124,14 @@
 										<header>
 											<h3>Object size estimation</h3>
 										</header>
-										<p>I tried to have different objects on the scene and measure the size of those objects. This can be really helpful in many cases such as quality cheeking in production lines , in logistic industry or in medicament classification by size.
-										There are some points regarding this project that I want to mention:
+										<p>I tried to have different objects on the scene and measure the size of those objects.
+											 This can be really helpful in many cases such as quality checking in production lines ,
+											 in logistic industry or in medicament classification by size.
+											There are some points regarding this project that I want to mention:
 															
 											1. The objects are assumed to be in the same depth.
-											2. one of the object sizes is given as known (reference object).
-											3. beside fitting a square, one can use circle fitting for those objects with the more circle shape form.
+											2. One of the object sizes is given as known (reference object).
+											3. Beside fitting a square, one can use circle fitting for those objects with the more circular shape form.
 										</p>
 										
 									</section>
@@ -149,7 +164,7 @@
 										<header>
 											<h3>Structure from motion (SFM)</h3>
 										</header>
-										<p>This video is part of my master thesis, in which I Programmed a structure from motion from Scratch in MATLAB. 
+										<p>This video is part of my master's thesis, in which I Programmed a structure from motion from Scratch in MATLAB. 
 											In this video, you can see the detected features (using Shi-Tomasi feature detector) in frames, camera positions (Visual Odometry)  in 2D and also the created point cloud from only images from above view (in X-Y plane).</p>
 									</section>
 
