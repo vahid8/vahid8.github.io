@@ -1,120 +1,74 @@
-<!DOCTYPE HTML>
-<!--
-	Twenty by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Vahid</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="contact is-preload">
-		<div id="page-wrapper">
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>Welcome to my page !</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <script src="main.js"></script>
+        <!-- google fonts api -->
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
+        <!-- Add icon library -->   
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-			<!-- Header -->
-				<header id="header">
-					<h1 id="logo"><a href="index.html">Twenty <span>by HTML5 UP</span></a></h1>
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="index.html">Welcome</a></li>
-							<li class="submenu">
-								<a href="#">Layouts</a>
-								<ul>
-									<li><a href="left-sidebar.html">Left Sidebar</a></li>
-									<li><a href="right-sidebar.html">Right Sidebar</a></li>
-									<li><a href="no-sidebar.html">No Sidebar</a></li>
-									<li><a href="contact.html">Contact</a></li>
-									<li class="submenu">
-										<a href="#">Submenu</a>
-										<ul>
-											<li><a href="#">Dolore Sed</a></li>
-											<li><a href="#">Consequat</a></li>
-											<li><a href="#">Lorem Magna</a></li>
-											<li><a href="#">Sed Magna</a></li>
-											<li><a href="#">Ipsum Nisl</a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li><a href="#" class="button primary">Sign Up</a></li>
-						</ul>
-					</nav>
-				</header>
+    </head>
+    <body class="contact_body">
+        <main class="contact_main">
+            <nav>
+                <ul class="topnav" id="dropdownClick">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCtxJai7hG-puKrVIW0pkNDg">Youtube</a></li>
+                    <li><a href="contat.html">Contact</a></li>
+                                       
+                    
+                    <li class="dropdownIcon"><a href="javascript:void(0);" 
+                        onclick="dropdownmenu()">&#9776;</a></li>
+                </ul>
+            </nav>
+            <div class="container" id="section1">
+                <div class="row">
+                    <div class="col_6">
+                        <div class="leftside-col">                            
+                            <h3 class="large">You can reach me via linked-in or write me an email
+                                    to <a href="mailto:aghajanivahid1@gmail.com" >aghajanivahid1@gmail.com</a> .
+                            </h3>                
+                        </div>
+                    </div>
+                    <div class="col_6">
+                        <div class="banner">
+                        <img src="images/pexels-daniel-putzer-633409.jpg" alt="">
+                        </div>
+                    </div>
+                </div>                
+            </div>
+         </main> 
+         <footer class="footer">
+            <div class="copywrite">
+            <span>Copyright © 2021, All Right Reserved Vahid</span>
+            </div>
+            <div class="icons">            
+            
+            <a href="https://www.linkedin.com/in/vahid-aghajani" class="fa fa-linkedin"></a>
+            <a href="https://www.youtube.com/channel/UCtxJai7hG-puKrVIW0pkNDg" class="fa fa-youtube"></a>
+            <a href="https://github.com/vahid8" class="fa fa-github"></a>
+            </div>
+        </footer>   
+        
 
-			<!-- Main -->
-				<article id="main">
+    </body>   
 
-					<header class="special container">
-						<span class="icon solid fa-envelope"></span>
-						<h2>Get In Touch</h2>
-						<p>Use the form below to give /dev/null a piece of your mind.</p>
-					</header>
 
-					<!-- One -->
-						<section class="wrapper style4 special container medium">
+    <script>
+        function dropdownmenu(){
+        var x =document.getElementById("dropdownClick");
+        // change topnav to topnav.responsive
+        if (x.className ==="topnav"){x.className+=" responsive";}
+        // change topnav.responsive to topnav
+        else{x.className = "topnav";} 
+        }
+    </script>    
 
-							<!-- Content -->
-								<div class="content">
-									<form>
-										<div class="row gtr-50">
-											<div class="col-6 col-12-mobile">
-												<input type="text" name="name" placeholder="Name" />
-											</div>
-											<div class="col-6 col-12-mobile">
-												<input type="text" name="email" placeholder="Email" />
-											</div>
-											<div class="col-12">
-												<input type="text" name="subject" placeholder="Subject" />
-											</div>
-											<div class="col-12">
-												<textarea name="message" placeholder="Message" rows="7"></textarea>
-											</div>
-											<div class="col-12">
-												<ul class="buttons">
-													<li><input type="submit" class="special" value="Send Message" /></li>
-												</ul>
-											</div>
-										</div>
-									</form>
-								</div>
 
-						</section>
-
-				</article>
-
-			<!-- Footer -->
-				<footer id="footer">
-
-					<ul class="icons">
-						<li><a href="#" class="icon brands circle fa-twitter"><span class="label">Twitter</span></a></li>
-						<li><a href="#" class="icon brands circle fa-facebook-f"><span class="label">Facebook</span></a></li>
-						<li><a href="#" class="icon brands circle fa-google-plus-g"><span class="label">Google+</span></a></li>
-						<li><a href="#" class="icon brands circle fa-github"><span class="label">Github</span></a></li>
-						<li><a href="#" class="icon brands circle fa-dribbble"><span class="label">Dribbble</span></a></li>
-					</ul>
-
-					<ul class="copyright">
-						<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-					</ul>
-
-				</footer>
-
-		</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.dropotron.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollgress.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>
