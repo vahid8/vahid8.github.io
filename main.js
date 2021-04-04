@@ -1,6 +1,14 @@
-gsap.to(".intro_image",{duration: 3,height:"100%",top:"0",opacity:"100%",ease: "slow"});
-// gsap.to(".intro_image",{delay:2,duration: 1,width:"50%",left:"50%"});
-gsap.to(".intro_label",{duration: 3,opacity:"100%",bottom:"40%",ease: "slow"});
-// gsap.to(".container",{duration:2,backgroundColor:"black"})
-// gsap.to(".intro_image",{top:"0"});
-// gsap.to(".leftside-col",{duration: 3,bottom:"30%",color:"white",ease: "slow"})
+const introImage = document.querySelector(".intro_image")
+introImage.style.cssText = "transition-duration: 3s;height:100%;top:0;opacity:100%";
+
+
+const introLabel = document.querySelector(".intro_label")
+introLabel.style.cssText = "transition-duration: 3s;bottom:40%;opacity:100%";
+
+function dropdownmenu(){
+    var x =document.getElementById("dropdownClick");
+    // change topnav to topnav.responsive
+    if (x.className ==="topnav"){x.className+=" responsive";}
+    // change topnav.responsive to topnav
+    else{x.className = "topnav";} 
+    }
