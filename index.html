@@ -3,10 +3,16 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="bootstrap_4/css/bootstrap-grid.min.css">
+        <link rel="stylesheet" href="bootstrap_4/css/bootstrap.min.css">
+
         <title>Welcome to my page !</title>
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        
+        <script src="js/main.js"></script>
+        <script src="js/ab-particles.min.js"></script>
         <!-- google fonts api -->
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Gugi&display=swap" rel="stylesheet">
@@ -14,271 +20,457 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     </head>
-    <body>
-        <main>
-            <nav>
-                <ul class="topnav" id="dropdownClick">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="https://www.youtube.com/channel/UCtxJai7hG-puKrVIW0pkNDg">Youtube</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                                       
+    <body onload="particles(opacity=100, numParticles=10, sizeMultiplier=5, width=1, connections=true, connectionDensity=15, noBounceH=false,
+             noBounceV=false, speed=50, avoidMouse=false, hover=true)">
+        <div class="container-fluid main-div">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark my-navbar">
+                <div class="container-fluid">
+                <a class="navbar-brand navbar-logo" href="#">V</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.youtube.com/channel/UCtxJai7hG-puKrVIW0pkNDg" target="_blank">My Channel</a>
+                    </li>
                     
-                    <li class="dropdownIcon"><a href="javascript:void(0);" 
-                        onclick="dropdownmenu()">&#9776;</a></li>
-                </ul>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#contactMeModal">Contact me</a>
+                    </li>                    
+                    </ul>
+                </div>
+                </div>
             </nav>
-            <div class="container">
-                <div class="intro_image">
-                    <img src="images/pexels-daniel-putzer-633409.jpg" alt="">
-                </div>               
-                <div class="intro_label">
-                    <h3 class="large">My name is Vahid.<br> I'm a software engineer with a great <br>
-                     passion for AI, computer vision, <br>Geo-spatial, robotics and IOT.</h3>    
-                </div>           
-            </div>
-            
-            <div class="container2" id="section2">
+           
+            <div class="section-light intro">
                 <div class="row">
-                    <div class="col_6">
-                        <h3>Check out a summary of my previus projects below. I am currently
-                            working on some interseting projects in my free time and looking forward 
-                            new contributors. If you are intersted in the topics please contact me.</h3>                    
+                    <div class="col-sm-12 ">
+                        <canvas id="particles"></canvas>
                     </div>
-                    <div class="col_6">
-                        <div class="logo"><img src="images/logo.png" alt=""></div>                   
-                    </div>                    
                 </div>
+                
+                <div class="card title-section">
+                    <div class="card-body ">
+                        <p class="fs-1 fw-bold">Welcome to my page</p>
+                        <p class="fs-3 lh-lg fst-italic">My name is Vahid and I'm a software engineer
+                        with a great passion for AI, computer vision, Geo-spatial, robotics and IOT.</p>       
+                        <p class="fs-5 lh-lg fst-italic">Check out a summary of my previus projects below.</p>
+                    </div>
+                </div>                              
+
+              
+            </div>
+            <div class="bg-light">
+                <!-- First row  -->
+                <div class="row">               
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Lane detection</h5>
+                            <a ><iframe class="card-img-top" src="https://www.youtube.com/embed/PvbvOTZGero" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">                              
+                                <p class="fs-6 lh-lg ">This is a lane detector using just image processing techniques. It is not the best current method but is really simple and fast. 
+                                        <a data-bs-toggle="collapse" href="#collapselanedetection" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                            Read more
+                                        </a>
+                                </p>
+                                <div class="collapse" id="collapselanedetection">
+                                    <p class="fs-6 lh-lg ">
+                                        Also you need to know the exact location of the camera with respect to
+                                        the car coordinate system and its viewing angle to set the ROI 
+                                        (Region of interests). The most critical part is extracting 
+                                        the lines from masked edges using Hough Transform method and filtering
+                                        the results. The results can be improved using more
+                                        filters.
+                                    </p>
+                                </div>                                                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Face detection</h5>
+                            <a ><iframe class="card-img-top" src="https://www.youtube.com/embed/kmYbWWwVtAk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">
                               
-            </div>
-            <div class="container3">
-                <div class="row">
-                    <div class="col_6">
-                        <h5 > Lane detection </h5> 
-                        <a ><iframe src="https://www.youtube.com/embed/PvbvOTZGero" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a>
-										
-                        <p>This is a lane detector using just image processing techniques
-                           It is not the best current method but is really simple and fast.
-                           Also you need to know the exact location of the camera with respect to
-                           the car coordinate system and its viewing angle to set the ROI 
-                           (Region of interests). The most critical part is extracting 
-                           the lines from masked edges using Hough Transform method and filtering
-                           the results. The results can be improved using more
-                           filters.
-                           </p>                       
+                                <p class="fs-6 lh-lg ">Here are the results running 3 different face detectors in Opencv namely Cascade classifier, MTCNN and a opencv dnn  
+                                    <a data-bs-toggle="collapse" href="#collapsefacedetection" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Read more
+                                    </a>
+                                </p>
+                               <div class="collapse" id="collapsefacedetection">
+                                   <p class="fs-6 lh-lg ">
+                                        that use SSD and ResNet in backbone. Cascade classifiers are the 
+                                        older ones in Opencv and less accurate. The other two, use deep
+                                        neural network methods with different architecture.
+                                        Although MTCNN shows better results in a scene with a lot 
+                                        of faces or faces far from the camera, it fails in detecting
+                                        complicated faces ( with masks ) or faces that are much rotated.
+                                        In those cases the dnn model has much better performance.
+                                        In this video I tried to examine different scenes to illustrate the 
+                                        results.
+                                    </p>
+                                </div>
+                              
+                            </div>
+                        </div>
                     </div>
-                    <div class="col_6">
-                        <h5> Face detection </h5>
-                        <a> 
-                            <iframe src="https://www.youtube.com/embed/kmYbWWwVtAk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </a>
-                        <p>Here are the results running 3 different face detectors in
-                           Opencv namely Cascade classifier, MTCNN and a opencv dnn that
-                           use SSD and ResNet in backbone. Cascade classifiers are the 
-                           older ones in Opencv and less accurate. The other two, use deep
-                            neural network methods with different architecture.
-                            Although MTCNN shows better results in a scene with a lot 
-                            of faces or faces far from the camera, it fails in detecting
-                            complicated faces ( with masks ) or faces that are much rotated.
-                            In those cases the dnn model has much better performance.
-                            In this video I tried to examine different scenes to illustrate the 
-                            results.
-                        </p>
-                        
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Object size estimation</h5>
+                            <a><iframe class="card-img-top" src="https://www.youtube.com/embed/qNT3ZT9HTd0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">                              
+                                
+                                <p class="fs-6 lh-lg ">Determining object sizes and distances from one image is something intersting !
+                                    I tried to have different objects 
+                                    <a data-bs-toggle="collapse" href="#collapseobjectsize" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Read more
+                                    </a>
+                                </p>
+
+                               <div class="collapse" id="collapseobjectsize">
+                                   <p class="fs-6 lh-lg ">
+                                        on the scene and measure the size of those objects.
+                                        This can be really helpful in many cases such as quality checking in production lines ,
+                                        in logistic industry or in medicament classification by size.
+                                        There are some points regarding this project that I want to mention:
+                                                                    
+                                        1. The objects are assumed to be in the same depth.
+                                        2. One of the object sizes is given as known (reference object).
+                                        3. Beside fitting a square, one can use circle fitting for those objects with the more circular shape form.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    
                     </div>
+
+                </div>
+                   
+
+                <!-- second row  -->
+                <div class="row">               
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Camera calibration</h5>
+                            <a ><iframe class="card-img-top" src="https://www.youtube.com/embed/QWby8T0sn9k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">                              
+                                <p class="fs-6 lh-lg ">Camera calibration is one of the fundamental tasks that we need
+                                    to do before every experiment in Computer Vision.
+                                        <a data-bs-toggle="collapse" href="#collapseCameracalib" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                            Read more
+                                        </a>
+                                </p>
+                                <div class="collapse" id="collapseCameracalib">
+                                    <p class="fs-6 lh-lg ">
+                                        This is an overview of my camera calibration GUI written in Python+Tkinter. 
+                                        The K-Matrix and distortion parameters using square chequerboard
+                                        will be calculated. The important thing is that I can check each
+                                        image individually to see if the reprojection error is higher than
+                                        the main
+                                    </p>
+                                </div>                                                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Structure from motion (SFM) </h5>
+                            <a ><iframe class="card-img-top" src="https://www.youtube.com/embed/DZ3OYMcw79c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">
+                              
+                                <p class="fs-6 lh-lg "> This video is part of my master's thesis, in which I Programmed a structure from motion from Scratch in MATLAB.
+                                    <a data-bs-toggle="collapse" href="#collapseSFM" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Read more
+                                    </a>
+                                </p>
+                               <div class="collapse" id="collapseSFM">
+                                   <p class="fs-6 lh-lg ">
+                                    In this video, you can see the detected features (using Shi-Tomasi feature detector)
+                                    in frames, camera positions (Visual Odometry)  in 2D and also the created point cloud 
+                                    from only images from above view (in X-Y plane).</p>
+                         
+
+                                    </p>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Scanner</h5>
+                            <a><iframe class="card-img-top" src="https://www.youtube.com/embed/hsulcNJ4azw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">
+                              
+                                <p class="fs-6 lh-lg ">This video shows the case of using Opencv to extract ROI (region of interest)
+                                     and coordinate system
+                                    <a data-bs-toggle="collapse" href="#collapseScanner" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Read more
+                                    </a>
+                                </p>
+
+                               <div class="collapse" id="collapseScanner">
+                                   <p class="fs-6 lh-lg ">
+                                    transformation on this particular region. One of the use cases of such a technique is here for creating a Scanner !
+                                    another use case is in lane detection method from Ross Kippenbrock.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    
+                    </div>
+
                 </div>
 
-                <div class="row">
-                    <div class="col_6">
-                        <h5> Object size estimation </h5> 
-                        <a >
-                            <iframe src="https://www.youtube.com/embed/qNT3ZT9HTd0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-                        </a>
-										
-                        <p>
-                            Determining object sizes and distances from one image is something intersting !
-                            I tried to have different objects on the scene and measure the size of those objects.
-                            This can be really helpful in many cases such as quality checking in production lines ,
-                            in logistic industry or in medicament classification by size.
-                            There are some points regarding this project that I want to mention:
-                                                        
-                            1. The objects are assumed to be in the same depth.
-                            2. One of the object sizes is given as known (reference object).
-                            3. Beside fitting a square, one can use circle fitting for those objects with the more circular shape form.
-										
-                           </p>                       
+
+
+         
+
+                <!-- 3 row -->
+                <div class="row">               
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Yolo object detector</h5>
+                            <a ><iframe class="card-img-top" src="https://www.youtube.com/embed/Q8FoR8Tq99Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">                              
+                                <p class="fs-6 lh-lg ">Recently I was on my way back home, that I thought to record a video and test some object 
+                                    detectors on it.
+                                        <a data-bs-toggle="collapse" href="#collapseYolo" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                            Read more
+                                        </a>
+                                </p>
+                                <div class="collapse" id="collapseYolo">
+                                    <p class="fs-6 lh-lg ">
+                                        First of all ,I tried Yolo object detector on it. Yolo is a one-stage 
+                                        detector that does the object detection and classification at one step. It is designed to
+                                        be used in real time and claimed to be as fast as 45 fps on a single GPU.
+                                    </p>
+                                </div>                                                              
+                            </div>
+                        </div>
                     </div>
-                    <div class="col_6">
-                        <h5> Camera calibration </h5>
-                        <a> 
-                            <iframe src="https://www.youtube.com/embed/QWby8T0sn9k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-                        </a>
-                        <p>
-                            Camera calibration is one of the fundamental tasks that we need
-                            to do before every experiment in Computer Vision. This is an overview
-                            of my camera calibration GUI written in Python+Tkinter. 
-                            The K-Matrix and distortion parameters using square chequerboard
-                            will be calculated. The important thing is that I can check each
-                            image individually to see if the reprojection error is higher than
-                            the normal and choose between the images
-                        </p>
-                        
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">SSD object detector</h5>
+                            <a ><iframe class="card-img-top" src="https://www.youtube.com/embed/EHrznj5OXvk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">
+                              
+                                <p class="fs-6 lh-lg "> I used the pre trained model of Mobilenet+SSD for object detection here.
+                                    This model is claimed to be 
+                                    <a data-bs-toggle="collapse" href="#collapseSSD" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Read more
+                                    </a>
+                                </p>
+                               <div class="collapse" id="collapseSSD">
+                                   <p class="fs-6 lh-lg ">
+                                    more accurate than YOLO but slower. Although it was trained on coco dataset, I was not satisfied with the result. So I decreased the confidence threshold to 20 percent. 
+                                    I think this model should be retrained in case of using for city situations.
+                                    </p>
+                                </div>
+                              
+                            </div>
+                        </div>
                     </div>
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Face landmark detection</h5>
+                            <a><iframe class="card-img-top" src="https://www.youtube.com/embed/mG0lFa-qyr8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">
+                              
+                                <p class="fs-6 lh-lg ">This is an implementation of free dlib library for face landmark detection.
+                                    These landmarks can be the bases 
+                                    <a data-bs-toggle="collapse" href="#collapsefacelandmark" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Read more
+                                    </a>
+                                </p>
+
+                               <div class="collapse" id="collapsefacelandmark">
+                                   <p class="fs-6 lh-lg ">
+                                    for 
+                                    Emotional Detection or other ML projects.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    
+                    </div>
+
                 </div>
 
-                <div class="row">
-                    <div class="col_6">
-                        <h5> Structure from motion (SFM) </h5> 
-                        <a >
-                            <iframe src="https://www.youtube.com/embed/DZ3OYMcw79c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </a>
-										
-                        <p>Thref="javascript:void(0);" 
-                            onclick="dropdownmenu()"his video is part of my master's thesis, in which I Programmed a structure from motion from Scratch in MATLAB. 
-                            In this video, you can see the detected features (using Shi-Tomasi feature detector) in frames, camera positions (Visual Odometry)  in 2D and also the created point cloud from only images from above view (in X-Y plane).</p>
-                                       
-                    </div>
-                    <div class="col_6">
-                        <h5> Scanner </h5> 
-                        <a>
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/hsulcNJ4azw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>                      
-                    </a> 
-                        <p>This video shows the case of using Opencv to extract ROI (region of interest) and coordinate system transformation on this particular region. 
-                            one of the use cases of such a technique is here for creating a  Scanner !
-                            another use case is in lane detection method from Ross Kippenbrock.</p>
-                
-                        
-                    </div>
-                </div>
+                <!-- 4 row -->                
 
-                <div class="row">
-                    <div class="col_6">
-                        <h5> Yolo object detector </h5> 
-                        <a >
-                            <iframe src="https://www.youtube.com/embed/Q8FoR8Tq99Y" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-						</a>
-										
-                        <p>
-                            Recently I was on my way back home, that I thought to record a video and test some object 
-                            detectors on it. First of all ,I tried Yolo object detector on it. Yolo is a one-stage 
-                            detector that does the object detection and classification at one step. It is designed to
-                            be used in real time and claimed to be as fast as 45 fps on a single GPU.
-                        </p>								                     
+                <div class="row">               
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Traffic sign detection</h5>
+                            <a ><iframe class="card-img-top" src="https://www.youtube.com/embed/tsblIrlgvLY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">                              
+                                <p class="fs-6 lh-lg ">This an object detector that I trained on a Dataset (traffic signs of Germany),
+                                    Consisting 900 images and 43 classes. 
+                                        <a data-bs-toggle="collapse" href="#collapseTrafficSign" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                            Read more
+                                        </a>
+                                </p>
+                                <div class="collapse" id="collapseTrafficSign">
+                                    <p class="fs-6 lh-lg ">
+                                        I used the recent version of Yolo_V5.
+                                    </p>
+                                </div>                                                              
+                            </div>
+                        </div>
                     </div>
-                    <div class="col_6">
-                        <h5> SSD object detector </h5>
-                        <a> 
-                            <iframe src="https://www.youtube.com/embed/EHrznj5OXvk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
-									    </a>
-                        <p>
-                            I used the pre trained model of Mobilenet+SSD for object detection here. This model is claimed to be more accurate than YOLO but slower. Although it was trained on coco dataset, I was not satisfied with the result. So I decreased the confidence threshold to 20 percent. 
-                            I think this model should be retrained in case of using for city situations. </p>
                  
-                        
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Human pose Estimation</h5>
+                            <a ><iframe class="card-img-top" src="https://www.youtube.com/embed/4y-6PqUu5g8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">                              
+                                <p class="fs-6 lh-lg ">This is an implementation of Human pose detection using Pytorch.
+                                    I used Opencv for visualization after finding the Key-points.                                      
+                                </p>                      
+                              
+                            </div>
+                        </div>
+                    </div>                   
+
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Image Segmentation & visual effects</h5>
+                            <a><iframe class="card-img-top" src="https://www.youtube.com/embed/k2bozYtt8Kc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">
+                              
+                                <p class="fs-6 lh-lg ">This is a fun video. I used per-trained model in
+                                    Pytorch to detected objects and their boundaries.
+                                    Then I filtered only the human
+                                    <a data-bs-toggle="collapse" href="#collapseImageSegmentation" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Read more
+                                    </a>
+                                </p>
+
+                               <div class="collapse" id="collapseImageSegmentation">
+                                   <p class="fs-6 lh-lg ">
+                                    label and used it as the mask.
+                                    Other processes are done using Opencv.
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    
                     </div>
+
                 </div>
 
-                <div class="row">
-                    <div class="col_6">
-                        <h5> Face landmark detection </h5> 
-                        <a >
-                            <iframe src="https://www.youtube.com/embed/mG0lFa-qyr8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>    
-                        </a>
-										
-                        <p>This is an implementation of free dlib library for face landmark detection.These landmarks can be the bases for 
-                            Emotional Detection or other ML projects. (<a href="https://github.com/vahid8/FaceLandMarkDetection">Code</a>).
-                        </p>                 
-                    </div>     
-                    <div class="col_6">
-                        <h5> Traffic sign detection </h5> 
-                        <a >
-                            <iframe width="560" height="315" src="https://www.youtube.com/embed/tsblIrlgvLY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </a>
-										
-                        <p>This is an object detector that I trained on a Dataset (traffic signs of Germany), 
-                            Consisting 900 images and 43 classes. I used the recent version of Yolo_V5.
-                        </p>                 
-                    </div>                 
+                 
+
+                <!-- 5 row -->
+                <div class="row">               
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">Image stitching</h5>
+                            <a ><iframe class="card-img-top" src="https://www.youtube.com/embed/Ckl-yyw5uTo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">                              
+                                <p class="fs-6 lh-lg ">
+                                    Image Stitching by finding the features (ORB detector and descriptor) in each image and then 
+                                    using the matched features 
+                                    <a data-bs-toggle="collapse" href="#collapseImagestitching" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                            Read more
+                                        </a>
+                                </p>
+                                <div class="collapse" id="collapseImagestitching">
+                                    <p class="fs-6 lh-lg ">
+                                        to find the Homography between images.
+                                        Using this Homography, the image can be projected to the previous image coordinate system.
+                                    </p>
+                                </div>                                                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-12 col-lg-4 my-cards">
+                        <div class="card">
+                            <h5 class="fs-5 text-center card-title text-uppercase">SFM from scratch</h5>
+                            <a ><iframe class="card-img-top" src="https://www.youtube.com/embed/aYeGPR4fvVk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></a> 
+                            <div class="card-body">
+                              
+                                <p class="fs-6 lh-lg ">
+                                    This is a demo of the project that I coded from scratch in Python.
+                                    I used images of a calibrated camera
+                            
+                                    <a data-bs-toggle="collapse" href="#collapseSFM2" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                        Read more
+                                    </a>
+                                </p>
+                               <div class="collapse" id="collapseSFM2">
+                                   <p class="fs-6 lh-lg ">
+                                    and created a Sparse 3D point cloud. No other sensor is used for this project and rather than the point cloud, the camera position can be obtained.
+                                    </p>
+                                </div>
+                              
+                            </div>
+                        </div>
+                    </div>
+
+
                 </div>
-
-                <div class="row">
-                    <div class="col_6">
-                        <h5> Human pose Estimation </h5> 
-                        <a >
-                            <iframe src="https://www.youtube.com/embed/4y-6PqUu5g8" 
-											frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-											allowfullscreen></iframe>
-                        </a>
-										
-                        <p>This is an implementation of Human pose detection using Pytorch.
-                            I used Opencv for visualization after finding the Key-points.											 
-                        </p>                   
-                    </div>
-                    <div class="col_6">
-                        <h5> Image Segmentation & visual effects </h5>
-                        <a> 
-                            <iframe src="https://www.youtube.com/embed/k2bozYtt8Kc" 
-											frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-											allowfullscreen></iframe>                        
-                        </a>
-                        <p>This is a fun video. I used per-trained model in
-                            Pytorch to detected objects and their boundaries.
-                            Then I filtered only the human label and used it as the mask.
-                            Other processes are done using Opencv.                             
-                        </p>
-                        
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col_6">
-                        <h5> Image stitching </h5> 
-                        <a >
-                            <iframe src="https://www.youtube.com/embed/Ckl-yyw5uTo" 
-                            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
-                            allowfullscreen></iframe>
-                        </a>
-										
-                        <p>Image Stitching by finding the features (ORB detector and descriptor) in each image and then 
-                            using the matched features to find the Homography between images.
-                            Using this Homography, the image can be projected to the previous image coordinate system.										 
-                        </p>               
-                    </div>
-                    <div class="col_6">
-                        <h5> SFM from scratch </h5>
-                        <a> 
-                            <iframe src="https://www.youtube.com/embed/aYeGPR4fvVk" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>									
-                        </a>
-                        <p>This is a demo of the project that I coded from scratch in Python. I used images of a calibrated camera and created a Sparse 3D point cloud.
-                            No other sensor is used for this project and rather than the point cloud, the camera position can be obtained.                             
-                        </p>
-                        
-                    </div>
-                </div>
-
-
-                
-                <!-- <div class="circle1"></div> -->
-                <!-- <div class="circle2"></div> -->
-                <div class="circle3"></div>
-            </div>
-
-        </main>
-        <footer class="footer">
-            <div class="copywrite">
-            <span>Copyright © 2021, All Right Reserved Vahid</span>
-            </div>
-            <div class="icons">            
             
-            <a href="https://www.linkedin.com/in/vahid-aghajani" class="fa fa-linkedin"></a>
-            <a href="https://www.youtube.com/channel/UCtxJai7hG-puKrVIW0pkNDg" class="fa fa-youtube"></a>
-            <a href="https://github.com/vahid8" class="fa fa-github"></a>
             </div>
-        </footer>
-        <script src="main.js"></script>
+            <footer class="footer"> 
+                <div class="container-fluid">            
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-sm-12 col-md-3">                                                
+                                <div class="icons">                            
+                                    
+                                        <a href="https://www.linkedin.com/in/vahid-aghajani" target="_blank" class="fa fa-linkedin-square fa-2x"></a>
+                                        <a href="https://www.youtube.com/channel/UCtxJai7hG-puKrVIW0pkNDg" target="_blank" class="fa fa-youtube-play fa-2x"></a>
+                                        <a href="https://github.com/vahid8" target="_blank" class="fa fa-github fa-2x"></a>
+                                    
+                                </div>
+
+                                <p class="fs-6 lh-lg text-center Copyright">Copyright © 2021, All Right Reserved Vahid</p>
+                                                            
+                        </div>
+                        <div class="col"></div>
+                    </div>
+                </div>
+            </footer>
+            
+        </div>
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="contactMeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Contact info</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        You can reach me via <a href="https://www.linkedin.com/in/vahid-aghajani" target="_blank">linked-in</a> or write me an email
+                        to <a href="mailto:aghajanivahid1@gmail.com" >aghajanivahid1@gmail.com
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        
+        
 
     </body>   
+    <script src="bootstrap_4/js/bootstrap.bundle.min.js"></script>
   
-
 
 
 </html>
