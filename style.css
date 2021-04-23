@@ -87,3 +87,16 @@ footer{
 
 
 
+/* Media query ->If the browser window is 600px or smaller, */
+@media only screen and (max-width: 420px) {
+    #particles,.intro {
+      height: 80vh;
+    }
+  }
+
+/* Media query ->If the browser window is 320px or smaller, */
+@media only screen and (max-width: 420px) {
+    #particles,.intro {
+      height: 100vh;
+    }
+  }
